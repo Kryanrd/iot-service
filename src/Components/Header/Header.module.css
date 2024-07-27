@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
-    font-family: 'Poboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
 
@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #c1b9ff;
+    background-color: hsl(247 69% 14%);
     
 }
 
@@ -27,7 +27,8 @@
 .header__logo {
     font-size: 40px;
     font-weight: 800;
-    color: #ffffff;
+    color: hsl(0 100% 85%);
+    cursor: pointer;
 }
 
 .header__user {
@@ -38,19 +39,45 @@
 }
 
 .header__user__info {
-
+    font-size: 20px;
+    font-weight: 400;
+    color: hsl(0 100% 85%);
 }
 
 .header__user__icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: hsl(267 71% 41%);
     height: 40px;
     width: 40px;
     border-radius: 20px;
-    background-color: hsl(0, 37%, 45%);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    color: hsl(0 100% 85%);
+    font-size: 16px;
+    text-transform: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
 }
 
-.icon {
+.header__user__icon:hover {
+    background-color: hsl(267, 80%, 52%);
+    color: hsl(0 100% 95%);
+    transition: all 0.1s ease-in-out;
+}
 
+.header__user__icon:active {
+    background-color: hsl(267 71% 41%);
+    color: hsl(0 100% 95%);
+    box-shadow: 0 1px 1px hsl(0 0% 0% / 0.1);
+    transition: all 0.1s ease-in-out;
+}
+
+.header__user__icon:disabled, .button:hover:disabled {
+    opacity: 0.5;
+    box-shadow: none;
+    cursor: default;
+    background-color: hsl(267, 80%, 52%);
+    color: hsl(0 100% 95%);
 }

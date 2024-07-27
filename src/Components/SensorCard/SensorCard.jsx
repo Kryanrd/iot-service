@@ -4,7 +4,7 @@ import { MdModeEdit } from "react-icons/md";
 import { MdExpandMore } from "react-icons/md";
 
 
-const SensorCard = () => {
+const SensorCard = ({ onEditSensor }) => {
 
     return (
         <div className={styles.card}>
@@ -19,7 +19,7 @@ const SensorCard = () => {
                 </div>
             </div>
             <div className={styles["btn-box"]}>
-                    <button className={styles["btn-box__button"]}>
+                    <button onClick={onEditSensor} className={styles["btn-box__button"]}>
                         <MdModeEdit className={styles.icon}/>
                     </button>
                     <button className={styles["btn-box__button"]}>

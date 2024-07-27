@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import styles from "./Login.module.css";
-// import TextField from '@mui/material/TextField';
-
 
 const Login = () => {
     const [islogin, setLogin] = useState(false);
@@ -47,11 +45,6 @@ const Login = () => {
             <div className={styles.content}>
                 <div className={styles.logo}>Iot Service</div>
                 <h2 className={styles.label}>Login</h2>
-                
-                {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" 
-                    size="small" 
-                /> */}
-
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <label className={styles.form__label} htmlFor="name">Name</label>
                     <input
@@ -63,10 +56,7 @@ const Login = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                     />
-                    {/* {errors.name && <p className="form__error">Name is required</p>} */}
-
                     <p className={`${styles.form__error} ${errors.name ? styles.show : ''}`}>Name is required</p>
-
                     <label className={styles.form__label} htmlFor="password">Password</label>
                     <div className={styles["form__input-box"]}>
                         <input
@@ -83,8 +73,6 @@ const Login = () => {
                             {visible ? <IoMdEye className={styles.icon}/> : <IoMdEyeOff className={styles.icon}/>}
                         </div>
                     </div>
-                    {/* {errors.password && <p className="form__error">Password is required</p>} */}
-
                     <p className={`${styles.form__error} ${errors.password ? styles.show : ''}`}>Password is required</p>
                     <button className={styles.button} disabled={!formData.name || !formData.password}>Login</button>
                 </form>

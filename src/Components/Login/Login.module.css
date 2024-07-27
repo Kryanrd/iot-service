@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
-    font-family: 'Poboto', sans-serif;
-}
-
-* {
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
 
@@ -13,9 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    background: url('../../images/img.jpg') no-repeat center center;
-    background-size: cover;
+    background: url('../../images/img5.jpg') no-repeat center / cover;
 }
 
 .content {
@@ -25,44 +20,37 @@
     margin: 20px;
     padding: 40px;
     border-radius: 20px;
-    border: 2px solid #ffffff6e;
-    box-shadow: 0px 0px 16px #000000;
-    /* background: hsla(229, 70%, 31%, 0.48); */
-    backdrop-filter: blur(3px);
+    border: 3px solid hsl(0 100% 82% / 0.175);
+    box-shadow: 0px 0px 10px hsla(202 94% 75% / 0.5);
+    backdrop-filter: blur(12px);
 }
 
 .logo {
-    font-family: 'Roboto';
     font-weight: 800;
-    font-size: 28px;
+    font-size: 36px;
+    line-height: 36px;
     display: flex;
     justify-content: center;
-    color: #FFFFFF;
+    color: hsl(0 100% 85%);
 }
 
 .label {
-    margin-block: 16px;
-    font-family: 'Roboto';
-    font-weight: 500;
+    margin-block: 12px;
+    margin-inline: 8px;
+    font-weight: 600;
     font-size: 24px;
     line-height: 28px;
-    display: flex;
-    align-items: center;
-    color: #FFFFFF;
+    color: hsl(0 100% 85%);
 }
 
-.form {
-    padding-bottom: 14px;
-}
+.form { }
 
 .form__label {
-    font-family: 'Roboto';
-    font-weight: 500;
+    font-weight: 100;
     font-size: 14px;
     display: flex;
-    color: #FFFFFF;
-    margin-top: 4px;
-    margin-bottom: 2px;
+    color: hsl(0 100% 85% / 0.8);
+    margin: 4px 8px 2px;
 }
 
 .form__input-box {
@@ -74,21 +62,25 @@
 .form__input-box__input {
     width: 100%;
     height: 40px;
-    background: #ffffff00;
-    border: 1px solid #BCBEC0;
-    border-radius: 5px;
-    padding: 0px 40px 0px 28px;
+    background: hsl(0 0% 100% / 0);
+    border: 2px solid hsl(0 100% 85% / 0.4);
+    border-radius: 8px;
+    padding: 0px 40px 0px 8px;
+    color: hsl(0 100% 85% / 0.4);
 }
 
 .form__input-box__input::placeholder {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    display: flex;
-    align-items: center;
-    color: #BCBEC0;
+    font-weight: 100;
+    font-size: 14px;
+    color: hsl(0 100% 85% / 0.4);
+}
+
+.form__input-box__input:focus-visible {
+    border: 2px solid hsl(0 100% 85% / 0.4);
+    outline: 1px solid hsl(0 100% 85% / 0.8);
+    font-weight: 100;
+    font-size: 14px;
+    color: hsl(0 100% 85% / 1);
 }
 
 .form__input-box__icon {
@@ -97,7 +89,7 @@
     position: absolute;
     top: 8px;
     right: 8px;
-    color: #9aa6b3;
+    color: hsl(0 100% 85% / 0.4);
 }
 
 .icon {
@@ -108,7 +100,7 @@
 
 .form__error {
     padding: 2px;
-    color: #f39494;
+    color: hsl(0 100% 33%);
     line-height: 16px;
     opacity: 0;
     visibility: hidden;
@@ -132,7 +124,6 @@
     width: 100%;
     height: 40px;
     color: hsl(246 63% 90%);
-    font-family: 'Roboto';
     font-size: 16px;
     text-transform: none;
     cursor: pointer;
@@ -142,7 +133,7 @@
 .button:hover {
     background-color: hsl(246 63% 50%);
     color: hsl(246 63% 95%);
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 10px hsla(0 0% 0% / 0.1);
     transform: translateY(-1px);
     transition: all 0.1s ease-in-out;
 }
@@ -150,7 +141,7 @@
 .button:active {
     background-color: hsl(246 63% 50%);
     color: hsl(246 63% 95%);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px hsla(0 0% 0% / 0.1);
     transform: translateY(0);
     transition: all 0.1s ease-in-out;
 }
@@ -162,14 +153,4 @@
     background-color: hsl(246 63% 45%);
     color: hsl(246 63% 90%);
     transform: translateY(0);
-}
-
-.text-field {
-    width: 100%;
-    height: 40px;
-    background: #FFFFFF;
-    border: 1px solid #BCBEC0;
-    border-radius: 5px;
-    padding: 0px 40px 0px 28px;
-    color: red;
 }

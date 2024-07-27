@@ -14,7 +14,8 @@
     width: 100%;
     padding: 20px;
     border-radius: 20px;
-    background-color: rgb(215, 172, 107);
+    background-color: hsl(28, 37%, 42%);
+    color: hsl(28, 100%, 85%);
     position: relative;
 }
 
@@ -50,7 +51,8 @@
     display: block;
     height: 200px;
     width: 300px;
-    background-color: #de7171;
+    background-color: hsl(28, 66%, 23%);
+    color: hsl(28, 100%, 85%);
     border-radius: 20px;
 }
 
@@ -58,7 +60,8 @@
     display: block;
     height: 200px;
     width: 300px;
-    background-color: #de7171;
+    background-color: hsl(28, 66%, 23%);
+    color: hsl(28, 100%, 85%);
     border-radius: 20px;
 }
 
