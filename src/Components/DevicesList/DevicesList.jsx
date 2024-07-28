@@ -2,7 +2,7 @@ import styles from "./DevicesList.module.css";
 import React from 'react';
 import { MdOutlinePlaylistAdd } from "react-icons/md";
 
-const DevicesList = ({ onAddDevice }) => {
+const DevicesList = ({ onAddDevice, onDeviceClick }) => {
 
     const devices = [
         { id: 1, name: "Устройство 1", description: "Описание устройства 1", latitude: 55.7558, longitude: 37.6173 },
@@ -19,12 +19,8 @@ const DevicesList = ({ onAddDevice }) => {
             </div>
             <div className={styles.card__list} id={styles.element}>
                 {devices.map(device => (
-                    <button key={device.id} className={styles.item}>
+                    <button key={device.id} className={styles.item} onClick={() => onDeviceClick(device)}>
                         <p className={styles.item__name}>{device.name}</p>
-                        {/* <p className={styles.item__description}>{device.description}</p>
-                        <p className={styles.item__coords}>
-                            Широта: {device.latitude}, Долгота: {device.longitude}
-                        </p> */}
                     </button>
                 ))}
             </div>

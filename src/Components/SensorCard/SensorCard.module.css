@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
-    font-family: 'Poboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -12,23 +12,24 @@
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    padding: 20px;
+    padding: 14px;
     border-radius: 20px;
     background-color: hsl(28, 37%, 42%);
     color: hsl(28, 100%, 85%);
     position: relative;
+    overflow: hidden;
 }
 
 .content {
     display: flex;
-    flex-direction:column;
-    gap: 12px;
+    flex-direction: column;
 }
 
 .content__text {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    justify-content: center;
+    line-height: 40px;
 }
 
 .content__text__name {
@@ -43,32 +44,55 @@
 
 .content__info {
     display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-right: 12px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease;
+}
+
+.content__info.expanded {
+    margin-top: 8px;
+    max-height: 500px;
+    /* или любое подходящее значение в зависимости от содержимого */
+    opacity: 1;
+}
+
+.tables {
+    display: flex;
     flex-direction: row;
     gap: 12px;
 }
 
 .content__info__table {
     display: block;
-    height: 200px;
-    width: 300px;
     background-color: hsl(28, 66%, 23%);
     color: hsl(28, 100%, 85%);
-    border-radius: 20px;
+    border-radius: 16px;
+    padding: 12px;
+    max-width: 324px;
 }
 
 .content__info__timetable {
-    display: block;
-    height: 200px;
-    width: 300px;
+    display: flex;
+    align-items: center;
+    height: 194px;
+    max-width: 324px;
+    width: 100%;
     background-color: hsl(28, 66%, 23%);
     color: hsl(28, 100%, 85%);
-    border-radius: 20px;
+    border-radius: 16px;
+    padding: 12px;
+    font-size: 40px;
 }
 
 .btn-box {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: end;
+    position: relative;
 }
 
 .btn-box__button {
@@ -80,9 +104,48 @@
     background-color: #dadefe67;
     border: none;
     cursor: pointer;
+    transition: transform 0.8s ease-in-out;
+}
+
+.expandedButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.noExpandedButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    opacity: 0;
 }
 
 .icon {
     width: 24px;
     height: 24px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif;
+    color: hsl(27, 28%, 55%);
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.table th,
+.table td {
+    border: 3px solid hsl(26, 35%, 36%);
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
 }

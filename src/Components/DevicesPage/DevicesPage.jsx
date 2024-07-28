@@ -16,6 +16,7 @@ const DevicesPage = () => {
     const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
     const [isAddSensorDialogOpen, setIsAddSensorDialogOpen] = useState(false);
     const [isEditSensorDialogOpen, setIsEditSensorDialogOpen] = useState(false);
+    const [selectedDevice, setSelectedDevice] = useState(null);
 
     const handleOpenAddDialog = () => {
         setIsAddDialogOpen(true);
@@ -57,6 +58,10 @@ const DevicesPage = () => {
         setIsEditSensorDialogOpen(false);
     };
 
+    const handleDeviceClick = (device) => {
+        setSelectedDevice(device);
+    };
+
     return (
         <>
             {isAddDialogOpen && <AddDeviceDialog onClose={handleCloseAddDialog} />}
@@ -67,17 +72,23 @@ const DevicesPage = () => {
             <div className={styles.container}>
                 <div className={styles.content}>
                     <div className={styles["nav-devices"]}>
-                        <DevicesList onAddDevice={handleOpenAddDialog} />
+                        <DevicesList onAddDevice={handleOpenAddDialog} onDeviceClick={handleDeviceClick} />
                     </div>
                     <div className={styles.test}>
-                        {/* <StartCard/>
-                        <MapCard/> */}
-                        <DeviceCard
-                            onEditDevice={handleOpenEditDialog}
-                            onDeleteDevice={handleOpenDeleteDialog}
-                            onAddSensor={handleOpenAddSensorDialog}
-                            onEditSensor={handleOpenEditSensorDialog}
-                        />
+                        {selectedDevice ? (
+                            <DeviceCard
+                                device={selectedDevice}
+                                onEditDevice={handleOpenEditDialog}
+                                onDeleteDevice={handleOpenDeleteDialog}
+                                onAddSensor={handleOpenAddSensorDialog}
+                                onEditSensor={handleOpenEditSensorDialog}
+                            />
+                        ) : (
+                            <>
+                                <StartCard />
+                                <MapCard />
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
