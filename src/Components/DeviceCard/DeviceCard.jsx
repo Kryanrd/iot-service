@@ -18,8 +18,8 @@ const DeviceCard = ({ device, onEditDevice, onDeleteDevice, onAddSensor, onEditS
         { id: 5, value: 14.08, timestamp: "2024-07-27T18:10:00Z" },
         { id: 6, value: 14.44, timestamp: "2024-07-27T18:00:00Z" }
     ];
-    
-    
+
+
 
     const sensors = [
         { id: 1, name: "Датчик 1", description: "Описание датчика 1" },
@@ -28,10 +28,14 @@ const DeviceCard = ({ device, onEditDevice, onDeleteDevice, onAddSensor, onEditS
     ];
 
     return (
-        <div className={styles.card}> 
+        <div className={styles.card}>
             <div className={styles.info}>
                 <div className={styles.info__text}>
                     <h2 className={styles.info__text__name}>{device.name}</h2>
+                    <div className={styles.info__text__coordinates}>
+                        <p className={styles.latitude}>Широта: {device.latitude}</p>
+                        <p className={styles.latitude}>Долгота: {device.longitude}</p>
+                    </div>
                     <div className={styles.info__text__descr}>{device.description}</div>
                 </div>
                 <div className={styles["info__menu-box"]}>
@@ -60,11 +64,11 @@ const DeviceCard = ({ device, onEditDevice, onDeleteDevice, onAddSensor, onEditS
             </div>
             <div className={styles["sensors-list"]}>
                 {sensors.map(sensor => (
-                    <SensorCard 
-                        key={sensor.id} 
-                        sensor={sensor} 
-                        sensorData={sensorData} 
-                        onEditSensor={onEditSensor} 
+                    <SensorCard
+                        key={sensor.id}
+                        sensor={sensor}
+                        sensorData={sensorData}
+                        onEditSensor={onEditSensor}
                     />
                 ))}
             </div>

@@ -19,7 +19,7 @@ const SensorCard = ({ sensor, sensorData, onEditSensor }) => {
         labels: sortedData.map(data => new Date(data.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })),
         datasets: [
             {
-                label: 'Значение',
+                label: '', 
                 data: sortedData.map(data => data.value.toFixed(2)),
                 fill: false,
                 borderColor: 'hsl(27, 28%, 55%)',
@@ -30,6 +30,8 @@ const SensorCard = ({ sensor, sensorData, onEditSensor }) => {
 
     // Опции для графика
     const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
             x: {
                 grid: {
@@ -50,10 +52,11 @@ const SensorCard = ({ sensor, sensorData, onEditSensor }) => {
         },
         plugins: {
             legend: {
-                labels: {
-                    color: 'hsl(27, 28%, 55%)', // Цвет текста легенды
-                }
-            }
+                display: false, // Отключаем отображение легенды
+            },
+            title: {
+                display: false // Отключаем заголовок графика
+            },
         }
     };
 

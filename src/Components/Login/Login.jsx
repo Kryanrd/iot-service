@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import styles from "./Login.module.css";
 
-const Login = () => {
-    const [islogin, setLogin] = useState(false);
-
+const Login = ({ onLogin }) => {
     const [visible, setVisible] = useState(false);
     const [formData, setFormData] = useState({ name: "", password: "" });
     const [errors, setErrors] = useState({ name: false, password: false });
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -36,7 +36,13 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (formData.name && formData.password) {
-            setLogin(true);
+            onLogin();
+            navigate('/devices');
+        } else {
+            setErrors({
+                name: !formData.name,
+                password: !formData.password
+            });
         }
     };
 

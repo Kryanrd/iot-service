@@ -10,7 +10,7 @@ import EditSensorDialog from "../dialogs/EditSensorDialog/EditSensorDialog";
 import StartCard from "../StartCard/StartCard";
 import MapCard from "../MapCard/MapCard";
 
-const DevicesPage = () => {
+const DevicesPage = ({ currentPage, setCurrentPage }) => {
     const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
     const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
@@ -60,6 +60,7 @@ const DevicesPage = () => {
 
     const handleDeviceClick = (device) => {
         setSelectedDevice(device);
+        setCurrentPage('devices');
     };
 
     return (
@@ -75,19 +76,21 @@ const DevicesPage = () => {
                         <DevicesList onAddDevice={handleOpenAddDialog} onDeviceClick={handleDeviceClick} />
                     </div>
                     <div className={styles.test}>
-                        {selectedDevice ? (
-                            <DeviceCard
-                                device={selectedDevice}
-                                onEditDevice={handleOpenEditDialog}
-                                onDeleteDevice={handleOpenDeleteDialog}
-                                onAddSensor={handleOpenAddSensorDialog}
-                                onEditSensor={handleOpenEditSensorDialog}
-                            />
-                        ) : (
+                        {currentPage === 'start' ? (
                             <>
                                 <StartCard />
                                 <MapCard />
                             </>
+                        ) : (
+                            selectedDevice && (
+                                <DeviceCard
+                                    device={selectedDevice}
+                                    onEditDevice={handleOpenEditDialog}
+                                    onDeleteDevice={handleOpenDeleteDialog}
+                                    onAddSensor={handleOpenAddSensorDialog}
+                                    onEditSensor={handleOpenEditSensorDialog}
+                                />
+                            )
                         )}
                     </div>
                 </div>

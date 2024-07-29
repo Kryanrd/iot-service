@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: row;
     justify-content: start;
-    margin-bottom: 60px;
+    margin-bottom: 24px;
     position: relative;
 }
 
@@ -42,6 +42,13 @@
 .info__text__descr {
     font-size: 16px;
     font-weight: 400;
+}
+
+.info__text__coordinates {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    font-weight: 100;
 }
 
 .info__menu-box {
@@ -82,8 +89,9 @@
 }
 
 .icon {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    color: hsl(28, 100%, 85%);
 }
 
 .sensors-list {
