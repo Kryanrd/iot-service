@@ -1,8 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+    --login-content-border-color: hsl(0 100% 82% / 0.175);
+    --login-content-box-shadow-color: hsl(202 94% 75% / 0.5);
+    --login-label-color: hsl(0 100% 85%);
+    --login-form-label-color: hsl(0 100% 85% / 0.8);
+    --login-input-color: hsl(0 100% 85% / 0.4);
+    --login-input-color-hover: hsl(0 100% 85% / 0.6);
+    --login-error-color:hsl(0 100% 33%);
 
-* {
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
+    --login-button-color: hsl(246 63% 45%);
+    --login-button-text-color: hsl(246 63% 90%);
+    --login-button-color-hover: hsl(246 63% 50%);
+    --login-button-text-color-hover: hsl(246 63% 95%);
+
 }
 
 .container {
@@ -20,8 +29,8 @@
     margin: 20px;
     padding: 40px;
     border-radius: 20px;
-    border: 3px solid hsl(0 100% 82% / 0.175);
-    box-shadow: 0px 0px 10px hsla(202 94% 75% / 0.5);
+    border: 3px solid var(--login-content-border-color);
+    box-shadow: 0px 0px 10px var(--login-content-box-shadow-color);
     backdrop-filter: blur(12px);
 }
 
@@ -31,7 +40,8 @@
     line-height: 36px;
     display: flex;
     justify-content: center;
-    color: hsl(0 100% 85%);
+    color: var(--login-label-color);
+    cursor: pointer;
 }
 
 .label {
@@ -40,16 +50,14 @@
     font-weight: 600;
     font-size: 24px;
     line-height: 28px;
-    color: hsl(0 100% 85%);
+    color: var(--login-label-color);
 }
-
-.form { }
 
 .form__label {
     font-weight: 100;
     font-size: 14px;
     display: flex;
-    color: hsl(0 100% 85% / 0.8);
+    color: var(--login-form-label-color);
     margin: 4px 8px 2px;
 }
 
@@ -63,24 +71,24 @@
     width: 100%;
     height: 40px;
     background: hsl(0 0% 100% / 0);
-    border: 2px solid hsl(0 100% 85% / 0.4);
+    border: 2px solid var(--login-input-color);
     border-radius: 8px;
     padding: 0px 40px 0px 8px;
-    color: hsl(0 100% 85% / 0.4);
+    color: var(--login-input-color);
 }
 
 .form__input-box__input::placeholder {
     font-weight: 100;
     font-size: 14px;
-    color: hsl(0 100% 85% / 0.4);
+    color: var(--login-input-color);
 }
 
 .form__input-box__input:focus-visible {
-    border: 2px solid hsl(0 100% 85% / 0.4);
-    outline: 1px solid hsl(0 100% 85% / 0.8);
+    border: 2px solid var(--login-input-color);
+    outline: 1px solid var(--login-form-label-color);
     font-weight: 100;
     font-size: 14px;
-    color: hsl(0 100% 85% / 1);
+    color: var(--login-label-color);
 }
 
 .form__input-box__icon {
@@ -89,7 +97,11 @@
     position: absolute;
     top: 8px;
     right: 8px;
-    color: hsl(0 100% 85% / 0.4);
+    color: var(--login-input-color);
+}
+
+.form__input-box__icon:hover {
+    color: var(--login-input-color-hover);
 }
 
 .icon {
@@ -100,7 +112,7 @@
 
 .form__error {
     padding: 2px;
-    color: hsl(0 100% 33%);
+    color: var(--login-error-color);
     line-height: 16px;
     opacity: 0;
     visibility: hidden;
@@ -114,7 +126,7 @@
 
 .button {
     margin-top: 20px;
-    background-color: hsl(246 63% 45%);
+    background-color: var(--login-button-color);
     border-radius: 20px;
     border: none;
     display: flex;
@@ -123,7 +135,7 @@
     align-items: center;
     width: 100%;
     height: 40px;
-    color: hsl(246 63% 90%);
+    color: var(--login-button-text-color);
     font-size: 16px;
     text-transform: none;
     cursor: pointer;
@@ -131,17 +143,17 @@
 }
 
 .button:hover {
-    background-color: hsl(246 63% 50%);
-    color: hsl(246 63% 95%);
-    box-shadow: 0 8px 10px hsla(0 0% 0% / 0.1);
+    background-color: var(--login-button-color-hover);
+    color: var(--login-button-text-color-hover);
+    box-shadow: 0 8px 10px hsl(0 0% 0% / 0.1);
     transform: translateY(-1px);
     transition: all 0.1s ease-in-out;
 }
 
 .button:active {
-    background-color: hsl(246 63% 50%);
-    color: hsl(246 63% 95%);
-    box-shadow: 0 1px 1px hsla(0 0% 0% / 0.1);
+    background-color: var(--login-button-color-hover);
+    color: var(--login-button-text-color-hover);
+    box-shadow: 0 1px 1px hsl(0 0% 0% / 0.1);
     transform: translateY(0);
     transition: all 0.1s ease-in-out;
 }
@@ -150,7 +162,7 @@
     opacity: 0.5;
     box-shadow: none;
     cursor: default;
-    background-color: hsl(246 63% 45%);
-    color: hsl(246 63% 90%);
+    background-color: var(--login-button-color);
+    color: var(--login-button-text-color);
     transform: translateY(0);
 }

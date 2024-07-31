@@ -101,7 +101,8 @@
     height: 40px;
     justify-content: center;
     align-items: center;
-    background-color: #dadefe67;
+    background-color: hsl(28, 63%, 30%);
+    color: hsl(28, 100%, 85%);
     border: none;
     cursor: pointer;
     transition: transform 0.8s ease-in-out;

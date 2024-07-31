@@ -1,8 +1,10 @@
-import styles from "./DevicesList.module.css";
 import React from 'react';
+import styles from "./DevicesList.module.css";
 import { MdOutlinePlaylistAdd } from "react-icons/md";
+import DevicesListItem from './../DevicesListItem/DevicesListItem';
+import { TbDeviceIpadPlus } from "react-icons/tb";
 
-const DevicesList = ({ onAddDevice, onDeviceClick }) => {
+const DevicesList = ({ onAddDevice, onDeviceClick, activeDeviceId }) => {
 
     const devices = [
         { id: 1, name: "Устройство 1", description: "Описание устройства 1", latitude: 55.7558, longitude: 37.6173 },
@@ -12,17 +14,36 @@ const DevicesList = ({ onAddDevice, onDeviceClick }) => {
         { id: 5, name: "Устройство 5", description: "Описание устройства 5", latitude: 55.7520, longitude: 37.6150 },
     ];
 
+
+    // const devices = []; // Пусть массив будет пустым для примера
+
+    const handleDeviceClick = (device) => {
+        onDeviceClick(device);
+    };
+
     return (
         <div className={styles.card}>
             <div className={styles.card__label}>
                 <h2 className={styles.card__label__text}>ALL DEVICES</h2>
             </div>
             <div className={styles.card__list} id={styles.element}>
-                {devices.map(device => (
-                    <button key={device.id} className={styles.item} onClick={() => onDeviceClick(device)}>
-                        <p className={styles.item__name}>{device.name}</p>
-                    </button>
-                ))}
+                {devices.length === 0 ? (
+                    <div className={styles.card__nolist}>
+                        <TbDeviceIpadPlus className={styles.card__nolist__icon} />
+                        <div className={styles.card__nolist__text}>
+                            Устройства отсутствуют
+                        </div>
+                    </div>
+                ) : (
+                    devices.map(device => (
+                        <DevicesListItem
+                            key={device.id}
+                            device={device}
+                            isActive={device.id === activeDeviceId}
+                            onDeviceClick={handleDeviceClick}
+                        />
+                    ))
+                )}
             </div>
             <div className={styles.card__info}>
                 <div className={styles.card__info__text}>{devices.length} устройств</div>

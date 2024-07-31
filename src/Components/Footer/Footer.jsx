@@ -1,8 +1,5 @@
 import styles from "./Footer.module.css";
 import React from 'react';
-// import { Button } from '@mui/material';
-// import IconButton from '@mui/material/IconButton';
-//import TextField from '@mui/material/TextField';
 
 const Footer = () => {
 

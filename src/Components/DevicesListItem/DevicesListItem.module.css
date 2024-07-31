@@ -3,12 +3,26 @@
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 
-.button {
-    margin-top: 20px;
-    background-color: hsl(246 63% 45%);
+.item {
+    display: flex;
+    min-height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    scroll-snap-align: start;
+}
+
+.item__name {
+
+}
+
+.item {
+    background-color: hsl(246, 41%, 45%);
     border-radius: 20px;
     border: none;
     display: flex;
@@ -24,27 +38,23 @@
     transition: all 0.4s ease-in-out;
 }
 
-.button:hover {
-    background-color: hsl(246 63% 50%);
+.item:hover {
+    background-color: hsl(246, 40%, 50%);
     color: hsl(246 63% 95%);
     box-shadow: 0 8px 10px hsla(0 0% 0% / 0.1);
-    transform: translateY(-1px);
     transition: all 0.1s ease-in-out;
 }
 
-.button:active {
-    background-color: hsl(246 63% 50%);
+.item:active {
+    background-color: hsl(246, 40%, 50%);
     color: hsl(246 63% 95%);
     box-shadow: 0 1px 1px hsla(0 0% 0% / 0.1);
-    transform: translateY(0);
     transition: all 0.1s ease-in-out;
 }
 
-.button:disabled, .button:hover:disabled {
-    opacity: 0.5;
-    box-shadow: none;
-    cursor: default;
-    background-color: hsl(246 63% 45%);
-    color: hsl(246 63% 90%);
-    transform: translateY(0);
+.active {
+    background-color: hsl(246, 60%, 61%);
+    color: hsl(246 63% 95%);
+    box-shadow: 0 1px 1px hsla(0 0% 0% / 0.1);
+    transition: all 0.1s ease-in-out;
 }

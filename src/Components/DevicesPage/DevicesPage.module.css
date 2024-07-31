@@ -1,10 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-* {
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+    --device-page-color: hsl(260 60% 14%);
 }
 
 .container {
@@ -13,7 +8,7 @@
     width: 100%;
     flex-direction: row;
     justify-content: center;
-    background-color: hsl(260, 50%, 27%);
+    background-color: var(--device-page-color);
     
 }
 
@@ -35,7 +30,7 @@
     left: 0px;
 }
 
-.test {
+.card {
     margin: 20px 0 20px 20px;
     display: flex;
     flex-direction: column;
