@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# IoT Service - панель мониторинга устройств
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## О проекте
 
-## Available Scripts
+IoT Service - веб-приложение для визуализации и мониторинга устройств Интернета вещей (IoT). Приложение предоставляет интерфейс для просмотра списка устройств, отображения их местоположения на интерактивной карте и анализа показаний подключённых датчиков.
 
-In the project directory, you can run:
+Проект разработан с использованием React и демонстрирует создание панели мониторинга с интерактивными компонентами, географической визуализацией данных и графиками изменения показателей датчиков.
 
-### `npm start`
+## Функциональность
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Экран входа:** форма авторизации с проверкой заполнения имени пользователя и пароля.
+- **Список устройств:** отображение зарегистрированных устройств с возможностью выбора конкретного устройства.
+- **Интерактивная карта:** отображение местоположения устройств на карте OpenStreetMap с помощью OpenLayers.
+- **Карточка устройства:** просмотр названия, описания и географических координат выбранного устройства.
+- **Информация о датчиках:** отображение списка датчиков, их названий и описаний.
+- **История показаний:** просмотр значений датчиков и временных меток в табличном формате.
+- **Графики показаний:** визуализация изменения значений датчиков во времени с помощью линейных графиков.
+- **Управление отображением данных:** возможность раскрывать и сворачивать подробную информацию о датчиках.
+- **Диалоговые окна:** интерфейсные формы для добавления и редактирования устройств и датчиков, а также подтверждения удаления.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Особенности реализации
 
-### `npm test`
+- Компонентная архитектура React с разделением интерфейса на самостоятельные компоненты.
+- Использование React Hooks (`useState`, `useEffect`, `useRef`) для управления состоянием компонентов и жизненным циклом карты.
+- Организация навигации между страницами с помощью React Router.
+- Создание интерактивной карты с использованием OpenLayers.
+- Добавление маркеров устройств с отображением дополнительной информации при наведении.
+- Обработка пользовательских событий для выбора устройств на карте и в списке.
+- Визуализация временных рядов с помощью Chart.js и React Chart.js 2.
+- Использование CSS Modules для изоляции стилей компонентов.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Технологии
 
-### `npm run build`
+- **React 18** - библиотека для разработки пользовательского интерфейса.
+- **JavaScript (ES6+)** - реализация клиентской логики.
+- **React Hooks** - управление состоянием и обработка событий компонентов.
+- **React Router DOM** - навигация между страницами.
+- **Material UI 5** - компоненты пользовательского интерфейса.
+- **OpenLayers** - создание интерактивных карт и отображение географических данных.
+- **Chart.js** - построение графиков показаний датчиков.
+- **React Chart.js 2** - интеграция Chart.js с React.
+- **Sass** - работа со стилями.
+- **React Icons** - иконки интерфейса.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Запуск проекта
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Для локального запуска потребуется установленный Node.js и npm.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Клонирование репозитория
 
-### `npm run eject`
+```bash
+git clone https://github.com/Kryanrd/iot-service.git
+cd iot-service
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Установка зависимостей
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Выполните команду в корневой папке проекта:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Запуск приложения
 
-## Learn More
+Запустите локальный сервер разработки:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+После запуска приложение будет доступно по адресу:
 
-### Code Splitting
+`http://localhost:3000/`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Сборка проекта
 
-### Analyzing the Bundle Size
+Для создания production-сборки выполните:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm run build
+```
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Собранные файлы приложения будут размещены в папке `build/`.
